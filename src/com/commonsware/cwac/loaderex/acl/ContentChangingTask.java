@@ -11,23 +11,23 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
- */
+*/
 
 package com.commonsware.cwac.loaderex.acl;
 
-import android.content.Loader;
 import android.os.AsyncTask;
+import android.support.v4.content.Loader;
 
 public abstract class ContentChangingTask<T1, T2, T3> extends
-        AsyncTask<T1, T2, T3> {
-    private Loader<?> loader = null;
+    AsyncTask<T1, T2, T3> {
+  private Loader<?> loader=null;
 
-    ContentChangingTask(Loader<?> loader) {
-        this.loader = loader;
-    }
+  ContentChangingTask(Loader<?> loader) {
+    this.loader=loader;
+  }
 
-    @Override
-    protected void onPostExecute(T3 param) {
-        loader.onContentChanged();
-    }
+  @Override
+  protected void onPostExecute(T3 param) {
+    loader.onContentChanged();
+  }
 }
