@@ -128,6 +128,7 @@ public class ConstantsBrowserACL extends FragmentActivity implements
   }
 
   public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+    this.loader=(SQLiteCursorLoader)loader;
     adapter.changeCursor(cursor);
   }
 
